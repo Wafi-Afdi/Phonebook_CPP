@@ -20,7 +20,7 @@ file(GLOB_RECURSE SOURCES "${SOURCE_DIR}/*.cpp")
 add_executable(${PROJECT_NAME} ${SOURCES})
 
 # Specify include directories so header files can be found
-target_include_directories(${PROJECT_NAME} PUBLIC ${SOURCE_DIR})
+target_include_directories(${PROJECT_NAME} PUBLIC ${SOURCE_DIR} ${INCLUDE_DIR})
 target_compile_definitions(${PROJECT_NAME} PRIVATE CONTACT_PATH="${CONTACT_PATH}")
 
 file(COPY contacts.txt DESTINATION ${CMAKE_BINARY_DIR})
