@@ -7,6 +7,7 @@
 
 ## Setup
 
+Compile program:
 ```
 mkdir build
 cd build
@@ -15,4 +16,9 @@ make
 ./PhonebookCLI
 ```
 
-Note: Jika CMakeLists.txt diubah maka hapus dahulu folder dengan `rm -rf./build` lalu ulang dari awal proses di atas
+Run Program:
+```
+cd ./build/bin
+./PhonebookCLI
+```
+Note: Jika CMakeLists.txt diubah maka hapus dahulu folder dengan `rm -rf build` lalu ulang dari awal proses di atas

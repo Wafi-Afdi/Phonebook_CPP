@@ -11,6 +11,8 @@ set(CMAKE_CXX_EXTENSIONS OFF) # Ensure standard compliance
 
 set(SOURCE_DIR src)
 set(INCLUDE_DIR include)
+set(TEXT_FILE_SOURCE ${CMAKE_CURRENT_SOURCE_DIR}/contacts.txt)
+set(CONTACT_PATH "${CMAKE_SOURCE_DIR}/contacts.txt")
 
 file(GLOB_RECURSE SOURCES "${SOURCE_DIR}/*.cpp")
 
@@ -19,3 +21,6 @@ add_executable(${PROJECT_NAME} ${SOURCES})
 
 # Specify include directories so header files can be found
 target_include_directories(${PROJECT_NAME} PUBLIC ${SOURCE_DIR})
+target_compile_definitions(${PROJECT_NAME} PRIVATE CONTACT_PATH="${CONTACT_PATH}")
+
+file(COPY contacts.txt DESTINATION ${CMAKE_BINARY_DIR})
