@@ -17,11 +17,12 @@ void ViewContactState::enter()
 
 void ViewContactState::display() const
 {
-    // Display semua kontak
+    
 }
 
 std::unique_ptr<State> ViewContactState::handleInput(Phonebook &phonebook)
 {
+    phonebook.outputContact();
     std::cout << "\nPress Enter to return to Main Menu...";
     InputHandler::getStringInput(""); 
     return std::make_unique<MainMenuState>();

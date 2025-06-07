@@ -22,7 +22,8 @@ void MainMenuState::display() const
     std::cout << "3. Edit Contact\n";
     std::cout << "4. Delete Contact\n";
     std::cout << "5. Search Contact\n";
-    std::cout << "6. Exit\n";
+    std::cout << "6. Print to text\n";
+    std::cout << "7. Exit\n";
 }
 
 std::unique_ptr<State> MainMenuState::handleInput(Phonebook &phonebook)
@@ -35,7 +36,11 @@ std::unique_ptr<State> MainMenuState::handleInput(Phonebook &phonebook)
         case 3: return std::make_unique<EditContactState>();
         case 4: return std::make_unique<DeleteContactState>();
         case 5: return std::make_unique<SearchContactState>();
-        case 6: return nullptr; // Signal to exit
+        case 6: 
+        phonebook.saveContactsFile();
+            std::cout << "File saved to " << CONTACT_PATH << "\n";
+            return std::make_unique<MainMenuState>();
+        case 7: return nullptr; // Signal to exit
         default:
             std::cout << "Invalid choice. Please try again.\n";
             return std::make_unique<MainMenuState>(); // Stay in Main Menu

@@ -24,6 +24,7 @@ public:
     void setId(int id);
     void setName(const string& name);
     void setPhone(const string& phone);
+    static void setNextID(int id);
 };
 
 #endif

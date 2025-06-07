@@ -3,6 +3,10 @@
 // Initialize static variable
 int Contact_Model::next_id = 1;
 
+void Contact_Model::setNextID(int id) {
+    next_id = id;
+}
+
 // Default constructor
 Contact_Model::Contact_Model() : id(next_id++), name(""), phone("") {}
 

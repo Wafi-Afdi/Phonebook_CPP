@@ -10,7 +10,6 @@ private:
     vector<Contact_Model> contacts;
 
 public:
-    // Methods according to UML diagram
     void addContact(Contact_Model contact);
     vector<Contact_Model> getContacts();
     bool editContact(int contact_id, Contact_Model contact);
@@ -18,6 +17,7 @@ public:
     bool isEmpty();
     vector<Contact_Model> searchContacts(string query);
     void outputContact();
+    void saveContactsFile();
 };
 
 #endif // PHONEBOOK_H

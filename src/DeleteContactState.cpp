@@ -20,14 +20,15 @@ void DeleteContactState::display() const {
 }
 
 std::unique_ptr<State> DeleteContactState::handleInput(Phonebook& phonebook) {
-    // if (phonebook.isEmpty()) {
-    //     std::cout << "Phonebook is empty. Nothing to delete.\n";
-    //     return std::make_unique<MainMenuState>();
-    // }
+    if (phonebook.isEmpty()) {
+        std::cout << "Phonebook is empty. Nothing to delete.\n";
+        return std::make_unique<MainMenuState>();
+    }
 
-    int idToEdit = InputHandler::getIntInput("Enter contact id to delete: ");
+    int idToDelete = InputHandler::getIntInput("Enter contact id to delete: ");
     
     // fungsionalitas delete
+    phonebook.deleteContact(idToDelete);
 
 
     return std::make_unique<MainMenuState>();
